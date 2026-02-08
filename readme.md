@@ -13,7 +13,7 @@ Front-end simples (HTML/CSS/JS) que consome a API **APOD (Astronomy Picture of t
 - A função especialista `setLoading()` tem como objetivo **ligar/desligar o estado de carregamento** e faz isso primeiro **marcando `aria-busy`/skeleton** e depois **desabilitando botões**.
 
 - A função especialista `renderApod()` tem como objetivo **preencher os textos (título, data, descrição)** e faz isso primeiro **escrevendo nos elementos da tela** e depois **chamando `renderMedia()`**.
-
+git 
 - A função especialista `renderMedia()` tem como objetivo **renderizar a mídia** e faz isso primeiro **checando `media_type`**, depois **mostrando `<img>` ou `<iframe>`**, e por fim **configurando abrir/baixar**.
 
 - A função orquestradora `loadApod()` tem como objetivo **coordenar o fluxo completo** e faz isso primeiro **ligando loading**, depois **chamando `fetchApod()`**, depois **renderizando com `renderApod()`**, e por fim **salvando estado/toast e tratando erro**.
