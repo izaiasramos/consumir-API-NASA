@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA APOD Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="topbar">
+            <div class="brand">
+                <h1>NASA APOD Explorer</h1>
+                <p>Imagem (ou vídeo) astronômico do dia, com uma UI bonita e rápida.</p>
+            </div>
+
+            <div class="controls pill" aria-label="Controles">
+                <div class="field">
+                    <span class="label">Data</span>
+                    <input id="apodDate" class="input" type="date" />
+                </div>
+                <button id="btnLoad" class="btn primary" type="button">Carregar</button>
+                <button id="btnToday" class="btn" type="button">Hoje</button>
+                <button id="btnRandom" class="btn" type="button">Surpresa</button>
+            </div>
+        </header>
+
+        <main class="grid">
+            <article class="card" aria-label="Conteúdo APOD">
+                <div id="media" class="media skeleton" aria-busy="true">
+                    <span id="mediaBadge" class="badge">Carregando…</span>
+                </div>
+
+                <div class="cardBody">
+                    <h2 id="apodTitle" class="title">Carregando APOD…</h2>
+                    <p class="meta">
+                        <span id="apodDateLabel">—</span>
+                        <span aria-hidden="true"> • </span>
+                        <span id="apodType">—</span>
+                    </p>
+
+                    <div class="actions">
+                        <a id="btnOpen" class="btn primary" href="#" target="_blank" rel="noreferrer">Abrir original</a>
+                        <button id="btnCopy" class="btn" type="button">Copiar link</button>
+                        <a id="btnDownload" class="btn ghost" href="#" download>Baixar</a>
+                    </div>
+
+                    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+                </div>
+            </article>
+
+            <aside class="card" aria-label="Detalhes">
+                <div class="panel">
+                    <h2>Explicação</h2>
+                    <p class="small">APOD = Astronomy Picture of the Day.</p>
+                    <div id="apodExplain" class="explain">—</div>
+
+                    <div class="hr"></div>
+
+                    <p class="small" id="apodCopyright">© —</p>
+                    <p class="small">
+                        Fonte: <a id="apodSource" href="https://api.nasa.gov/" target="_blank" rel="noreferrer">NASA APIs</a>
+                        <span aria-hidden="true"> • </span>
+                        Dica: <span class="kbd">R</span> aleatório, <span class="kbd">T</span> hoje
+                    </p>
+                </div>
+            </aside>
+        </main>
+
+        <footer class="footer">
+            Mostra imagem/vídeo, título, data e descrição — com fallback para erros de rede/limite de requisições.
+        </footer>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
